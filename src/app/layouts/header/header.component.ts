@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [MatToolbarModule, MatButtonModule, RouterModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-
+  // No additional logic needed for a static Angular Material nav bar
 }
