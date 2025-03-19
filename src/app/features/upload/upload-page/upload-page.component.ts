@@ -5,7 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatTableModule } from '@angular/material/table';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
@@ -30,8 +30,18 @@ import { MatInputModule } from '@angular/material/input';
 export class UploadPageComponent {
   uploader: FileUploader;
   hasBaseDropZoneOver: boolean;
-  hasAnotherDropZoneOver: boolean;
+  // hasAnotherDropZoneOver: boolean;
   response: string;
+
+  // Define columns for the Material table
+  displayedColumns: string[] = [
+    'name',
+    'size',
+    'progress',
+    'status',
+    'actions',
+  ];
+  dataSource = new MatTableDataSource<any>();
 
   constructor() {
     this.uploader = new FileUploader({
@@ -51,15 +61,33 @@ export class UploadPageComponent {
     });
 
     this.hasBaseDropZoneOver = false;
-    this.hasAnotherDropZoneOver = false;
+    // this.hasAnotherDropZoneOver = false;
 
     this.response = '';
 
-    this.uploader.response.subscribe((res) => (this.response = res));
+    // this.uploader.response.subscribe((res) => (this.response = res));
+      // Update the data source whenever the queue changes
+      this.uploader.onAfterAddingFile = () => {
+        this.dataSource.data = this.uploader.queue;
+      };
   }
 
   public fileOverBase(e: any): void {
     this.hasBaseDropZoneOver = e;
+  }
+
+   // Actions for the table
+   uploadItem(item: any): void {
+    item.upload();
+  }
+
+  cancelItem(item: any): void {
+    item.cancel();
+  }
+
+  removeItem(item: any): void {
+    item.remove();
+    this.dataSource.data = this.uploader.queue; // Update data source
   }
 
   // public fileOverAnother(e: any): void {

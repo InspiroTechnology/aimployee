@@ -1,68 +1,81 @@
 <div class="upload-page">
-    <div>
 
-        <div class="drop-zone" [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" ng2FileDrop (fileOver)="fileOverBase($event)" [uploader]="uploader">
-            <h4>将文件拖拽到此处，本地上传, 云文件</h4>
-            <p>支持文件格式：支持 TXT、 MARKDOWN、 MDX、 PDF、 HTML、 XLSX、 XLS、 DOCX、 CSV、 MD、 HTM，单个文件不超过 15MB</p>
-        </div>
-        <!-- 
+    <div class="drop-zone" [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" ng2FileDrop
+        (fileOver)="fileOverBase($event)" [uploader]="uploader">
+        <h4>将文件拖拽到此处，本地上传, 云文件</h4>
+        <p>支持文件格式：支持 TXT、 MARKDOWN、 MDX、 PDF、 HTML、 XLSX、 XLS、 DOCX、 CSV、 MD、 HTM，单个文件不超过 15MB</p>
+    </div>
+    <!-- 
         <div ng2FileDrop [ngClass]="{'another-file-over-class': hasAnotherDropZoneOver}"
             (fileOver)="fileOverAnother($event)" [uploader]="uploader">
             Another drop zone
         </div> -->
 
-        Multiple
+    <!-- Multiple
         <input type="file" ng2FileSelect [uploader]="uploader" multiple /><br />
 
         Single
-        <input type="file" ng2FileSelect [uploader]="uploader" />
-    </div>
+        <input type="file" ng2FileSelect [uploader]="uploader" /> -->
 
     <div>
 
         <h3>Upload queue</h3>
         <p>Queue length: {{ uploader?.queue?.length }}</p>
 
-        <table>
-            <thead>
-                <tr>
-                    <th width="50%">Name</th>
-                    <th>Size</th>
-                    <th>Progress</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of uploader.queue">
-                    <td><strong>{{ item?.file?.name }}</strong></td>
-                    <td *ngIf="uploader.options.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB
-                    </td>
-                    <td *ngIf="uploader.options.isHTML5">
-                        <div>
-                            <div role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
-                        </div>
-                    </td>
-                    <td>
-                        <span *ngIf="item.isSuccess"><i></i></span>
-                        <span *ngIf="item.isCancel"><i></i></span>
-                        <span *ngIf="item.isError"><i></i></span>
-                    </td>
-                    <td nowrap>
-                        <button type="button" (click)="item.upload()"
-                            [disabled]="item.isReady || item.isUploading || item.isSuccess">
-                            <span></span> Upload
-                        </button>
-                        <button type="button" (click)="item.cancel()" [disabled]="!item.isUploading">
-                            <span></span> Cancel
-                        </button>
-                        <button type="button" (click)="item.remove()">
-                            <span></span> Remove
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let item"> {{ item?.file?.name }} </mat-cell>
+            </ng-container>
+
+            <!-- Size Column -->
+            <ng-container matColumnDef="size">
+                <mat-header-cell *matHeaderCellDef> Size </mat-header-cell>
+                <mat-cell *matCellDef="let item">
+                    {{ item?.file?.size / 1024 / 1024 | number: '.2' }} MB
+                </mat-cell>
+            </ng-container>
+
+            <!-- Progress Column -->
+            <ng-container matColumnDef="progress">
+                <mat-header-cell *matHeaderCellDef> Progress </mat-header-cell>
+                <mat-cell *matCellDef="let item">
+                    <mat-progress-bar mode="determinate" [value]="item.progress"></mat-progress-bar>
+                </mat-cell>
+            </ng-container>
+
+            <!-- Status Column -->
+            <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+                <mat-cell *matCellDef="let item">
+                    <span *ngIf="item.isSuccess">Success</span>
+                    <span *ngIf="item.isCancel">Cancelled</span>
+                    <span *ngIf="item.isError">Error</span>
+                </mat-cell>
+            </ng-container>
+
+            <!-- Actions Column -->
+            <ng-container matColumnDef="actions">
+                <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+                <mat-cell *matCellDef="let item">
+                    <button mat-button (click)="uploadItem(item)"
+                        [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                        Upload
+                    </button>
+                    <button mat-button (click)="cancelItem(item)" [disabled]="!item.isUploading">
+                        Cancel
+                    </button>
+                    <button mat-button (click)="removeItem(item)">
+                        Remove
+                    </button>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+
 
         <div>
             <div>
