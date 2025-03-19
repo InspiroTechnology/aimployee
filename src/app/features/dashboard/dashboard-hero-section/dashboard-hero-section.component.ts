@@ -6,13 +6,14 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './dashboard-hero-section.component.html',
-  styleUrls: ['./dashboard-hero-section.component.scss']
+  styleUrls: ['./dashboard-hero-section.component.scss'],
 })
 export class DashboardHeroSectionComponent implements OnInit {
+  slogans: string[] = [
+    '给我越多的数据，你会收获一个越聪明的我'
+  ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
