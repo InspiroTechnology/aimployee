@@ -1,14 +1,16 @@
-.upload-container {
-  text-align: center;
+.my-drop-zone {
+  border: dotted 3px lightgray;
 }
 
-.drop-zone {
-  border: 2px dashed #ccc;
-  padding: 20px;
-  margin: 10px 0;
-  cursor: pointer;
+.nv-file-over {
+  border: dotted 3px red;
+} /* Default class applied to drop zones on over */
+
+.another-file-over-class {
+  border: dotted 3px green;
 }
 
-.file-over {
-  border-color: #3f51b5;
+html,
+body {
+  height: 100%;
 }
