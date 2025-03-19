@@ -37,11 +37,21 @@ mat-toolbar {
     flex: 0 0 40%;
     display: flex;
     justify-content: space-around;
-    background-color: red;
   }
 
   .header-empty-space {
     flex: 1;
-    background-color: yellow;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    button {
+      background-color: white;
+      color: black;
+
+      &:hover {
+        background-color: lightgray;
+      }
+    }
   }
 }
