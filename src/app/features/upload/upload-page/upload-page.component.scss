@@ -1,0 +1,14 @@
+.upload-container {
+  text-align: center;
+}
+
+.drop-zone {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.file-over {
+  border-color: #3f51b5;
+}
