@@ -77,21 +77,33 @@
         </mat-table>
 
 
+        <button mat-raised-button color="primary" >
+        <mat-icon>cloud_upload</mat-icon> Upload all
+    </button>
+
+    <button mat-raised-button color="warn" >
+        <mat-icon>cloud_upload</mat-icon> Upload all
+    </button>
+
+    <button mat-raised-button color="accent" >
+        <mat-icon>cloud_upload</mat-icon> Upload all
+    </button>
+
         <div>
             <div>
                 Queue progress:
-                <div>
-                    <div role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
-                </div>
+                <mat-progress-bar mode="determinate" [value]="uploader.progress"></mat-progress-bar>
             </div>
-            <button type="button" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
-                <span></span> Upload all
+            <button mat-raised-button color="primary" (click)="uploader.uploadAll()"
+                [disabled]="!uploader.getNotUploadedItems().length">
+                <mat-icon>cloud_upload</mat-icon> Upload all
             </button>
-            <button type="button" (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
-                <span></span> Cancel all
+            <button mat-raised-button color="warn" (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+                <mat-icon>cancel</mat-icon> Cancel all
             </button>
-            <button type="button" (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
-                <span></span> Remove all
+            <button mat-raised-button color="accent" (click)="uploader.clearQueue()"
+                [disabled]="!uploader.queue.length">
+                <mat-icon>delete</mat-icon> Remove all
             </button>
         </div>
 
@@ -100,7 +112,7 @@
 
     <br><br>
 
-    <div>
+    <!-- <div>
         <div>
             <div>
                 <div>Response</div>
@@ -109,5 +121,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
