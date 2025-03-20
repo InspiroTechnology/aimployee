@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { LayOutService } from '../../service/lay-out.service';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { ThemesService } from '../../service/themes.service';
 
 @Component({
   selector: 'app-header',
@@ -20,12 +21,12 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  isDarkTheme: boolean = false; // Track the current theme
-
-  constructor(public layoutService: LayOutService) {}
+  constructor(
+    public layoutService: LayOutService,
+    public themesService: ThemesService
+  ) {}
 
   toggleTheme(): void {
-    this.isDarkTheme = !this.isDarkTheme;
-    document.body.classList.toggle('dark-theme', this.isDarkTheme);
+    this.themesService.toggleTheme();
   }
 }
