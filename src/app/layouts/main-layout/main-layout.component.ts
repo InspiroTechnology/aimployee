@@ -21,8 +21,4 @@ import { LayOutService } from '../../service/lay-out.service';
 })
 export class MainLayoutComponent {
   constructor(public layoutService: LayOutService) {}
-
-  toggleSidebar() {
-    this.layoutService.toggleSidebar();
-  }
 }
