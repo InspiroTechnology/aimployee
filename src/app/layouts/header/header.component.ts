@@ -15,6 +15,12 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
   constructor(public layoutService: LayOutService) {}
+  // toggleTheme(
+  //   document.body.classList.toggle('dark-theme');
 
+  // )
+  toggleTheme(): void {
+    document.body.classList.toggle('dark-theme');
+  }
   // No additional logic needed for a static Angular Material nav bar
 }
