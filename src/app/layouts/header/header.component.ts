@@ -9,18 +9,23 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, RouterModule, MatIconModule,CommonModule],
+  imports: [
+    MatToolbarModule,
+    MatButtonModule,
+    RouterModule,
+    MatIconModule,
+    CommonModule,
+  ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(public layoutService: LayOutService) {}
-  // toggleTheme(
-  //   document.body.classList.toggle('dark-theme');
+  isDarkTheme: boolean = false; // Track the current theme
 
-  // )
+  constructor(public layoutService: LayOutService) {}
+
   toggleTheme(): void {
-    document.body.classList.toggle('dark-theme');
+    this.isDarkTheme = !this.isDarkTheme;
+    document.body.classList.toggle('dark-theme', this.isDarkTheme);
   }
-  // No additional logic needed for a static Angular Material nav bar
 }

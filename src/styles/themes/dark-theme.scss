@@ -1,0 +1,15 @@
+@use '@angular/material' as mat;
+@use './palettes' as palettes;
+
+$myapp-dark-theme: mat.m2-define-dark-theme((
+  color: (
+    primary: palettes.$myapp-theme-primary,
+    accent: palettes.$myapp-theme-accent,
+    warn: palettes.$myapp-theme-warn,
+  )
+));
+
+// Apply only colors for dark theme class
+.dark-theme {
+  @include mat.all-component-colors($myapp-dark-theme);
+}
