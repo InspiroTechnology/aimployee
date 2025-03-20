@@ -11,6 +11,12 @@
 
   .sidebar.hidden {
     transform: translateX(-100%); // Move sidebar out of view
+    width: 0; // Set width to 0 when hidden
+    visibility: hidden; // Ensure it's not interactable
+  }
+
+  .sidebar.hidden + .content {
+    flex: 0 0 100%; // Take up the full width when the sidebar is hidden
   }
 
   .content {
