@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss"; // Adjust the relative path as needed
+
 .upload-page {
   background-color: #fdfbee;
 }
@@ -7,7 +9,7 @@
 }
 
 .drop-zone {
-  border: 3px dashed #0087F7;
+  border: 3px dashed #0087f7;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -22,3 +24,8 @@
 .nv-file-over {
   border: dotted 3px red;
 } /* Default class applied to drop zones on over */
+
+.test {
+  // border-radius: $border-radius-md;
+  border-radius: $border-radius-lg;
+}
