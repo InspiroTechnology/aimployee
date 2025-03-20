@@ -1,4 +1,4 @@
-<mat-toolbar style="background-color: beige;">
+<mat-toolbar >
 <!-- <mat-toolbar color="primary"> -->
     <div class="header-logo">
         <button *ngIf="!layoutService.isSidebarOpen" mat-icon-button  (click)="layoutService.toggleSidebar()" aria-label="Toggle Sidebar">
@@ -13,6 +13,8 @@
         <button mat-button routerLink="/accounting">财务相关</button> -->
     </div>
     <div class="header-empty-space">
+    
+        <button mat-button (click)="toggleTheme()">Toggle Theme</button>
         <button mat-button routerLink="/settings">Login</button>
     </div>
 </mat-toolbar>

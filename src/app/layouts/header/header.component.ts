@@ -5,16 +5,28 @@ import { RouterModule } from '@angular/router';
 import { LayOutService } from '../../service/lay-out.service';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { ThemesService } from '../../service/themes.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, RouterModule, MatIconModule,CommonModule],
+  imports: [
+    MatToolbarModule,
+    MatButtonModule,
+    RouterModule,
+    MatIconModule,
+    CommonModule,
+  ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(public layoutService: LayOutService) {}
+  constructor(
+    public layoutService: LayOutService,
+    public themesService: ThemesService
+  ) {}
 
-  // No additional logic needed for a static Angular Material nav bar
+  toggleTheme(): void {
+    this.themesService.toggleTheme();
+  }
 }
