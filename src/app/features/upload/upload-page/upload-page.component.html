@@ -20,7 +20,7 @@
     <div>
 
         <h3>Upload queue</h3>
-        <p>Queue length: {{ uploader?.queue?.length }}</p>
+        <p>Queue length: {{ uploader.queue ? uploader.queue.length : 0 }}</p>
 
         <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <!-- Name Column -->
@@ -77,17 +77,17 @@
         </mat-table>
 
 
-        <button mat-raised-button color="primary" >
-        <mat-icon>cloud_upload</mat-icon> Upload all
-    </button>
+        <button mat-raised-button color="primary">
+            <mat-icon>cloud_upload</mat-icon> Upload all
+        </button>
 
-    <button mat-raised-button color="warn" >
-        <mat-icon>cloud_upload</mat-icon> Upload all
-    </button>
+        <button mat-raised-button color="warn">
+            <mat-icon>cloud_upload</mat-icon> Upload all
+        </button>
 
-    <button mat-raised-button color="accent" >
-        <mat-icon>cloud_upload</mat-icon> Upload all
-    </button>
+        <button mat-raised-button color="accent">
+            <mat-icon>cloud_upload</mat-icon> Upload all
+        </button>
 
         <div>
             <div>
