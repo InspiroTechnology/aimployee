@@ -6,6 +6,11 @@
     width: 200px;
     background-color: #f4f4f4; // Example background color
     flex-shrink: 0; // Prevent shrinking
+    transition: transform 0.3s ease; // Smooth transition for hiding
+  }
+
+  .sidebar.hidden {
+    transform: translateX(-100%); // Move sidebar out of view
   }
 
   .content {
