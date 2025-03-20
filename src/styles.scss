@@ -3,11 +3,12 @@
 :root {
   --text-color: black;
   --bg-color: white;
+  --border-color: #e8e8e8; // Light mode border color
 }
 .dark-theme {
   --text-color: white;
   --bg-color: #161616;
-  // --bg-color: #212121;
+  --border-color: #212121; // Dark mode border color
 }
 
 
