@@ -1,0 +1,16 @@
+.main-layout {
+  display: flex;
+  height: 100vh; // Full viewport height
+
+  .sidebar {
+    width: 200px;
+    background-color: #f4f4f4; // Example background color
+    flex-shrink: 0; // Prevent shrinking
+  }
+
+  .content {
+    flex: 1; // Take up the remaining space
+    background-color: #ffffff; // Example background color
+    overflow-y: auto; // Enable scrolling if content overflows
+  }
+}
