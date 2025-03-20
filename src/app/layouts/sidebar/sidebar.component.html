@@ -2,10 +2,16 @@
     <button mat-icon-button (click)="layoutService.toggleSidebar()" aria-label="Toggle Sidebar">
         <mat-icon>menu</mat-icon>
     </button>
-    <ul>
-        <li><a href="/new-flow">New Flow</a></li>
-        <li><a href="/knowledge-garden">Knowledge Garden</a></li>
-        <li><a href="/explore-more">Explore More</a></li>
-    </ul>
+    <mat-nav-list>
+        <mat-list-item>
+            <a mat-line href="/new-flow">New Flow</a>
+        </mat-list-item>
+        <mat-list-item>
+            <a mat-line href="/knowledge-garden">Knowledge Garden</a>
+        </mat-list-item>
+        <mat-list-item>
+            <a mat-line href="/explore-more">Explore More</a>
+        </mat-list-item>
+    </mat-nav-list>
 </nav>
 <!-- <div style="width: 100%; height"> </div> -->
