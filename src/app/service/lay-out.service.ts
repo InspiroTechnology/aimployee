@@ -17,6 +17,8 @@ export class LayOutService {
   }
 
   toggleSidebar(): void {
+    console.log('toggleSidebar clicked');
+    
     this._isSidebarOpen = !this._isSidebarOpen;
   }
 }

@@ -1,5 +1,6 @@
 <div class="main-layout">
   <div class="sidebar">
+    <button class="toggle-button" (click)="layoutService.toggleSidebar()">☰</button>
     <app-sidebar [class.closed]="!layoutService.isSidebarOpen"></app-sidebar>
   </div>
   <div class="content">
