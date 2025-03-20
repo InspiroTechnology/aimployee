@@ -9,8 +9,12 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
   standalone: true,
   imports: [CommonModule, RouterOutlet, HeaderComponent, SidebarComponent],
   templateUrl: './main-layout.component.html',
-  styleUrl: './main-layout.component.scss'
+  styleUrl: './main-layout.component.scss',
 })
 export class MainLayoutComponent {
+  isSidebarOpen = true;
 
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+  }
 }
