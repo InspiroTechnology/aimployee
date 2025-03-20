@@ -13,6 +13,9 @@
   border: none;
   padding: 5px 10px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 app-sidebar {
@@ -29,4 +32,8 @@ app-sidebar {
   flex: 1;
   padding: 20px;
   // ...existing code...
+}
+
+mat-icon {
+  font-size: 24px;
 }

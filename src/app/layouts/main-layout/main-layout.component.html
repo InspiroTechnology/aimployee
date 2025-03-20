@@ -1,6 +1,8 @@
-<!-- <app-header></app-header> -->
+<app-header></app-header>
 <div class="layout">
-  <button class="toggle-btn" (click)="toggleSidebar()">Toggle Sidebar</button>
+  <button class="toggle-btn" (click)="toggleSidebar()">
+    <mat-icon>{{ isSidebarOpen ? 'menu_open' : 'menu' }}</mat-icon>
+  </button>
   <app-sidebar [class.closed]="!isSidebarOpen"></app-sidebar>
   <div class="content">
     <router-outlet></router-outlet>
