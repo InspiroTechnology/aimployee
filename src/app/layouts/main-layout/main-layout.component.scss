@@ -3,7 +3,7 @@
   height: calc(100vh - 16px); // Subtract the border size (3px top + 3px bottom)
   box-sizing: border-box; // Include border in the total height and width
   border: 3px solid #e8e8e8; // Example border
-  border-radius: 22px;
+  border-radius: 8px;
   // margin: 8px;
 
 
@@ -27,12 +27,9 @@
     flex: 1; // Take up the remaining space
     background-color: #ffffff; // Example background color
     overflow-y: auto; // Enable scrolling if content overflows
+    box-sizing: border-box; // Include border in the total height and width
+    border: 1px solid #e8e8e8; // Example border
+    border-radius: 8px;
+    margin: 5px;
   }
-}
-
-
-.test{
-  height: 100%;
-  width: 100%;
-  background-color: darkgoldenrod;
 }
