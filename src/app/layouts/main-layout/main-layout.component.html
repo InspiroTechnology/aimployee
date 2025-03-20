@@ -1,10 +1,12 @@
 <app-header></app-header>
-<div class="layout">
-  <button class="toggle-btn" (click)="toggleSidebar()">
-    <mat-icon>{{ isSidebarOpen ? 'menu_open' : 'menu' }}</mat-icon>
+<div>
+  <button (click)="toggleSidebar()" aria-label="Toggle Sidebar">
+    <mat-icon>{{ layoutService.isSidebarOpen ? 'menu_open' : 'menu' }}</mat-icon>
   </button>
-  <app-sidebar [class.closed]="!isSidebarOpen"></app-sidebar>
-  <div class="content">
-    <router-outlet></router-outlet>
-  </div>
+  <main>
+    <app-sidebar [class.closed]="!layoutService.isSidebarOpen"></app-sidebar>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </main>
 </div>
