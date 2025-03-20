@@ -6,8 +6,11 @@
 }
 .dark-theme {
   --text-color: white;
-  --bg-color: #212121;
+  --bg-color: #161616;
+  // --bg-color: #212121;
 }
+
+
 body {
   color: var(--text-color);
   background-color: var(--bg-color);
