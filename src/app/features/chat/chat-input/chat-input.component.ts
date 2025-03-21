@@ -7,13 +7,10 @@ import { MatInputModule } from '@angular/material/input'; // Import MatInputModu
   standalone: true,
   imports: [CommonModule, MatInputModule], // Add MatInputModule to imports
   templateUrl: './chat-input.component.html',
-  styleUrls: ['./chat-input.component.scss']
+  styleUrls: ['./chat-input.component.scss'],
 })
 export class ChatInputComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -3,11 +3,13 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  height: 100%; /* Ensure it takes up 100% of the parent's height */
 }
 
-.mat-form-field {
+.chat-form {
   width: 100%;
   flex: 1 1 auto; /* Allow the input to grow */
+  height: 100%;
 }
 
 textarea {
