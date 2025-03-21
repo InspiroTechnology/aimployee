@@ -13,65 +13,8 @@
     padding: 0.5rem 1rem;
   }
 
-  .overview-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 16px;
-    padding: 16px;
-  }
-  
-  .overview-card {
-    text-align: center;
-    padding: 20px 10px;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  
-    .icon {
-      font-size: 30px;
-      margin-bottom: 8px;
-      color: #555;
-    }
-  
-    .label {
-      font-size: 14px;
-      color: #666;
-      font-family: monospace;
-    }
-  
-    .value {
-      font-size: 24px;
-      font-weight: 600;
-      font-family: monospace;
-    }
-  }
-  
-  .cta-card {
-    grid-column: span 4;
-    display: flex;
-    align-items: center;
-    padding: 16px;
-    border-radius: 12px;
-    background: #f9f9f9;
-    font-family: monospace;
-    cursor: pointer;
-  
-    .cta-content {
-      display: flex;
-      align-items: center;
-      width: 100%;
-    }
-  
-    .cta-icon {
-      margin-right: 12px;
-    }
-  
-    .cta-text {
-      flex-grow: 1;
-      font-size: 16px;
-    }
-  
-    .cta-arrow {
-      color: #999;
-    }
-  }
-  
+  // .overview-card {
+  //   text-align: center;
+  //   padding: 20px 10px;
+  //   border-radius: 12px;
+  //   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
