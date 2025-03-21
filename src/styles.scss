@@ -4,11 +4,14 @@
   --text-color: black;
   --bg-color: white;
   --border-color: #e8e8e8; // Light mode border color
+  --border-radius-sm: 8px; // Border radius for elements
+  --border-radius-md: 12px; // Border radius for elements
 }
 .dark-theme {
   --text-color: white;
   --bg-color: #161616;
   --border-color: #212121; // Dark mode border color
+  
 }
 
 
