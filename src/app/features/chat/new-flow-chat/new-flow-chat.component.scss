@@ -4,4 +4,21 @@
   border: 2px solid var(--border-color);
   border-radius: var(--border-radius-md);
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-input-container {
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  box-sizing: border-box;
+  margin: 0.5rem 1rem 0 1rem;
+  flex: 1 1 auto; /* Take up the remaining space */
+  overflow: auto; /* Ensure content is scrollable if it overflows */
+}
+
+.chat-settings-container {
+  margin: 0 1rem;
+  padding: 0.5rem 0;
+  flex: 0 0 auto; /* Normal height */
 }
