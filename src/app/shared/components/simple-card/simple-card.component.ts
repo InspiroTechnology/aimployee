@@ -12,7 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 export class SimpleCardComponent implements OnInit {
   @Input() icon!: string;
   @Input() label!: string;
-  @Input() value!: number;
+  @Input() value!: number;  
 
   constructor() {}
 
