@@ -24,6 +24,9 @@ mat-nav-list{
   text-decoration: none;
   color: var(--text-color);
   font-weight: bold;
+  display: flex; // Moved from inline style
+  width: 100%;   // Moved from inline style
+  height: 100%;  // Moved from inline style
 }
 
 .sidebar a:hover {
