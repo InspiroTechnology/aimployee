@@ -1,8 +1,14 @@
 .slogan-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start; // Align items to the top
+  align-items: start; // Center horizontally
+  width: 100%; // Full width for alignment
+  height: 100%;
 }
 
 .slogan-container h2 {
-  font-size: 24px;// Use CSS variable for flexibility
+  font-size: 24px; // Use CSS variable for flexibility
   margin-bottom: 5px;
 }
 
@@ -13,6 +19,5 @@
 }
 
 .slogan-container li {
-  font-size:18px; // Use CSS variable for flexibility
-  // margin: 5px 0;
+  font-size: 18px; // Use CSS variable for flexibility
 }
