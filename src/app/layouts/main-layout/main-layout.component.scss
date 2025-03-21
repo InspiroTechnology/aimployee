@@ -6,7 +6,6 @@
   border-radius: var(--border-radius-sm);
   // margin: 8px;
 
-
   .sidebar {
     width: 280px;
     flex-shrink: 0; // Prevent shrinking
@@ -24,12 +23,21 @@
   }
 
   .content {
+    display: flex;
+    flex-direction: column; // Stack children vertically
     flex: 1; // Take up the remaining space
-    // background-color: #ffffff; // Example background color
-    overflow-y: auto; // Enable scrolling if content overflows
+    overflow: hidden; // Prevent overflow
     box-sizing: border-box; // Include border in the total height and width
     border: 1px solid var(--border-color); // Example border
     border-radius: 8px;
     margin: 5px;
+  }
+  .content-header {
+    flex-shrink: 0; // Prevent shrinking
+  }
+
+  .content-body {
+    flex: 1; // Take up the remaining space
+    overflow-y: auto; // Enable scrolling for overflowing content
   }
 }
