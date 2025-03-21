@@ -1,5 +1,20 @@
 <div class="knowledge-overview-container">
   <span class="gray-text">Knowledge Garden Overview</span>
+  <div class="overview-grid">
+    <mat-card class="overview-card" *ngFor="let item of overviewItems">
+      <mat-icon class="icon">{{ item.icon }}</mat-icon>
+      <div class="label">{{ item.label }}</div>
+      <div class="value">0</div>
+    </mat-card>
+  
+    <mat-card class="cta-card">
+      <div class="cta-content">
+        <mat-icon class="cta-icon">library_books</mat-icon>
+        <span class="cta-text">Manage Your Knowledge Garden</span>
+        <mat-icon class="cta-arrow">chevron_right</mat-icon>
+      </div>
+    </mat-card>
+  </div>
 
-  <app-simple-card></app-simple-card>
+  <!-- <app-simple-card></app-simple-card> -->
 </div>
