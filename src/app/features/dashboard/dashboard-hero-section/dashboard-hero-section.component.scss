@@ -1,11 +1,14 @@
 .slogan-container {
   text-align: center;
-  background-color: #57B4BA;
+  background-color: var(
+    --background-color,
+    #57b4ba
+  ); // Use CSS variable for flexibility
   padding: 14px 0;
 }
 
-.slogan-container h1 {
-  font-size: 24px;
+.slogan-container h2 {
+  font-size: var(--heading-font-size, 24px); // Use CSS variable for flexibility
   margin-bottom: 10px;
 }
 
@@ -15,6 +18,6 @@
 }
 
 .slogan-container li {
-  font-size: 18px;
+  font-size: var(--item-font-size, 18px); // Use CSS variable for flexibility
   margin: 5px 0;
 }

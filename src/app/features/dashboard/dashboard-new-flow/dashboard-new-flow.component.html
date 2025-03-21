@@ -1,5 +1,21 @@
 <div class="dashboard-new-flow-container">
-    <app-dashboard-hero-section class="top-section"></app-dashboard-hero-section>
+
+    <!-- The following is an component that is used to display a hero section in the dashboard
+      -->
+    <app-dashboard-hero-section class="top-section"
+        [slogans]="['Empower your workflow', 'AI at your service', 'Innovation redefined']"
+        [header]="'Welcome to the Dashboard'" [containerClass]="'custom-hero-class'"
+        [containerStyle]="{ 'margin-top': '20px', 'text-align': 'left' }">
+    </app-dashboard-hero-section>
+
+
+
+
+    <!-- The following is an component that is used to display a chat section in the dashboard
+      -->
     <app-new-flow-chat class="middle-section"></app-new-flow-chat>
+
+    <!-- The following is an component that is used to display a bottom section in the dashboard, will use knowledge garden in the future
+      -->
     <div class="bottom-section"></div>
 </div>

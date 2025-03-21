@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,9 +9,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./dashboard-hero-section.component.scss'],
 })
 export class DashboardHeroSectionComponent implements OnInit {
-  slogans: string[] = [
-    '给我越多的数据，你会收获一个越聪明的我'
-  ];
+  @Input() slogans: string[] = []; // Accept slogans dynamically
+  @Input() header: string = 'Slogans'; // Accept header text dynamically
+  @Input() containerClass: string = ''; // Accept custom CSS class for positioning
+  @Input() containerStyle: { [key: string]: string } = {}; // Accept inline styles for positioning
 
   constructor() {}
 
