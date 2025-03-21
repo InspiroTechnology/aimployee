@@ -11,7 +11,6 @@ import { CommonModule } from '@angular/common';
 export class DashboardHeroSectionComponent implements OnInit {
   @Input() slogans: string[] = []; // Accept slogans dynamically
   @Input() header: string = ''; // Accept header text dynamically
-  @Input() containerClass: string = ''; // Accept custom CSS class for positioning
   @Input() containerStyle: { [key: string]: string } = {}; // Accept inline styles for positioning
 
   constructor() {}
@@ -19,7 +18,6 @@ export class DashboardHeroSectionComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.slogans);
     console.log(this.header);
-    console.log(this.containerClass);
     console.log(this.containerStyle);
   }
 }
