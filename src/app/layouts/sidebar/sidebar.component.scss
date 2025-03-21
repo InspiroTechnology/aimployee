@@ -1,34 +1,35 @@
 .sidebar {
   width: 100%;
   height: 100%;
-}
 
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-mat-nav-list{
-  width: 90%;
-  margin: 0 auto; // Centers the element horizontally
-}
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-.sidebar mat-list-item {
-  border: 1px solid var(--border-color); // Add border to list items
-  border-radius: 8px; // Match the border radius style
-  padding: 0.5rem; // Add padding for better spacing
-  margin: 0.5rem 0; // Add margin for better spacing
-}
+  mat-nav-list {
+    width: 90%;
+    margin: 0 auto;
+  }
 
-.sidebar a {
-  text-decoration: none;
-  color: var(--text-color);
-  font-weight: bold;
-  display: flex; // Moved from inline style
-  width: 100%;   // Moved from inline style
-  height: 100%;  // Moved from inline style
-}
+  mat-list-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+  }
 
-.sidebar a:hover {
-  color: #007bff;
+  a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      color: #007bff;
+    }
+  }
 }
