@@ -1,7 +1,14 @@
 import { Routes } from '@angular/router';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { LoginComponent } from './auth/pages/login/login.component';
+import { RegisterComponent } from './auth/pages/register/register.component';
+import { ForgotPasswordComponent } from './auth/pages/forgot-password/forgot-password.component';
 
 export const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: '',
     component: MainLayoutComponent,
@@ -43,13 +50,5 @@ export const routes: Routes = [
           ),
       },
     ],
-  },
-
-  {
-    path: 'login',
-    loadComponent: () =>
-      import('./features/auth/login-page/login-page.component').then(
-        (m) => m.LoginPageComponent
-      ),
   },
 ];
